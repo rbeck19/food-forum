@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import {useNavigate} from "react-router-dom"
 import './style.css';
 
-function Signup() {
+function Signup(props) {
     const path = useNavigate()
 
     const [data, setData] = useState({
@@ -20,13 +20,16 @@ function Signup() {
 
     const handleSubmit= (e) =>{
         e.preventDefault()
+        props.setUser(data);
+        path('/')
     }
 
     function Signin(){
         path('/login')
     }
   return (
-    <div>
+    <div className="main">
+     <div className="title">Recipe Food Forum</div>
      <form onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="username">username</label>
         <input
@@ -40,7 +43,7 @@ function Signup() {
          <input
           type="password"
           placeholder="password"
-          value="password"
+          name="password"
           id="password"
           onChange={handleChange}
           />
@@ -48,7 +51,7 @@ function Signup() {
          <input
           type="email"
           placeholder="email"
-          value="email"
+          name="email"
           id="email"
           onChange={handleChange}
           />
