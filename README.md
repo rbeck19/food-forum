@@ -7,7 +7,7 @@
 ![Wireframe](images/recipe_forum_wireframe.jpg)
 
 ## ERD
-![ERD](images/Food-Forum%20.png)
+![ERD](images/Food-Forum%20%20(1).png)
 
 ## [Trello-Board](https://trello.com/b/Xl8J8a75/food-forum-app)
 
