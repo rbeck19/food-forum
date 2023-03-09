@@ -1,7 +1,7 @@
 # Recipe-Forum
 
 ## Description
-- A Recipe-Forum app that is a place meant to give food lovers a place to come together and share their favorite recipes and comment on recipes. 
+- A Recipe-Forum app that is a place meant to give food lovers a place to come together and share their favorite recipes and comment on recipes. plus testing
 
 ## Wireframe
 ![Wireframe](images/recipe_forum_wireframe.jpg)
