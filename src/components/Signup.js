@@ -17,6 +17,9 @@ function Signup(props) {
             [event.target.name]: event.target.value
         })
     }
+    function Signin(){
+        path('/login')
+    }
 
     const handleSubmit= (e) =>{
         e.preventDefault()
@@ -24,9 +27,6 @@ function Signup(props) {
         path('/')
     }
 
-    function Signin(){
-        path('/login')
-    }
   return (
     <div className="main">
      <div className="title">Recipe Food Forum</div>

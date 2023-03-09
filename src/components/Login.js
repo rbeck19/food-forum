@@ -40,7 +40,7 @@ function Login(props) {
           />
 
           <button className="notamember" onClick={Signup}>Not a member</button>
-          <button type="submit" className="sign-in">Sign In</button>
+          <button type="submit" className="signin">Sign In</button>
       </form>
     </div>
   );
