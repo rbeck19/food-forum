@@ -4,7 +4,7 @@
 - A Recipe-Forum app that is a place meant to give food lovers a place to come together and share their favorite recipes and comment on recipes. 
 
 ## Wireframe
-![Wireframe](images/recipe_forum_wireframe.jpeg)
+![Wireframe](images/recipe_forum_wireframe.jpg)
 
 ## ERD
 ![ERD](images/Food-Forum%20.png)
