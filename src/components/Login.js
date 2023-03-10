@@ -2,6 +2,7 @@ import React, { useState } from "react"
 //import logo from './logo.svg';
 import './style.css';
 import {useNavigate} from "react-router-dom"
+import Footer from "./Footer"
 
 function Login(props) {
     const path = useNavigate()
@@ -42,6 +43,7 @@ function Login(props) {
           <button className="notamember" onClick={Signup}>Not a member</button>
           <button type="submit" className="signin">Log In</button>
       </form>
+      <Footer/>
     </div>
   );
 }

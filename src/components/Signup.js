@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import {useNavigate} from "react-router-dom"
 import './style.css';
+import Footer from "./Footer"
+
 
 function Signup(props) {
     const path = useNavigate()
@@ -59,6 +61,7 @@ function Signup(props) {
     <button type="submit" className="signup">Signup</button>
     <button className="signin" onClick={Login}>Log In</button>
     </form>
+    <Footer/>
     </div>
   );
 }

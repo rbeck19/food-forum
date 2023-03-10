@@ -10,6 +10,8 @@
     background-size: cover;
     width: 100vw;;
     height: 100vh;
+    margin: 0;
+    padding: 0;
    }
 form {
   margin-top: 3%;
@@ -48,3 +50,34 @@ form {
  .signin {
     margin-bottom: 2%;
  }
+ 
+ .nav-main {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;;
+   background-color: black;
+   color: white;
+   height: 70px;
+ }
+ .link {
+   color: white;
+   text-decoration: none;
+   font-size: 1.5rem;
+ }
+.footer {
+   margin-top: 5%;
+   background-color: black;
+   color: white;
+   height: 90px;
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.copy {
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

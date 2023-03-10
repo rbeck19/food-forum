@@ -1,18 +1,13 @@
-//import logo from './logo.svg';
-//import './App.css';
+import "./style.css";
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
-
-
-function Main() {
+export default function Recipe() {
   return (
     <div className="App">
       <Navbar/>
-     Main
-   <Footer/>
+      Recipe
+      <Footer/>
     </div>
   );
 }
-
-export default Main
