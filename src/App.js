@@ -8,7 +8,9 @@ import Navbar from "./components/Navbar"
 import Recipe from "./components/Recipe"
 import CreateEdit from "./components/CreateEdit"
 import Footer from "./components/Footer"
+import AuthPage from './pages/AuthPage';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
     <div>
       <Router>
       <Routes>
+      <Route exact path='/auth' element={<AuthPage/>}/>
       <Route exact path='/navbar' element={<Navbar/>}/>
       <Route exact path='/' element={<Main/>}/>
       <Route exact path='/login' element={<Login setUser={setUser}/>}/>
