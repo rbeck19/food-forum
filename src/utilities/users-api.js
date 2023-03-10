@@ -53,6 +53,7 @@ export default async function sendRequest(url, method="GET", payload=null) {
     }
     //if there is a token inlucucde it in request
     const token = getToken()
+    console.log("this is it: " + token)
     if(token) {
         //make sure we have headers on our options
         options.headers = options.headers || {}
@@ -69,6 +70,6 @@ export default async function sendRequest(url, method="GET", payload=null) {
     }
 }
 
-export async function checkToken() {
-    return sendRequest(BASE_URL + "/check-token")
-}
+// export async function checkToken() {
+//     return sendRequest(BASE_URL + "/check-token")
+// }

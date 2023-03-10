@@ -1,22 +1,11 @@
-import sendRequest from "./send-request";
 
-const BASE_URL = "/api/recipe/"
+import sendRequest from "./users-api";
 
+const BASE_URL = "http://127.0.0.1:8000/api/recipes/"
 
-export async function show() {
-    return sendRequest(BASE_URL, "GET")
+//GET Recipe
+export function getALL() {
+    return sendRequest(BASE_URL)
 }
 
-// sending request to api to create recipe
-export async function create(recipeData) {
-    return sendRequest(BASE_URL + "/new", "POST", recipeData)
-}
 
-// 
-export async function remove(recipeId) {
-    return sendRequest(`${BASE_URL}/${recipeId}`, "DELETE")
-}
-
-export async function update(recipeId, recipeData) {
-    return sendRequest(`${BASE_URL}/${recipeId}`, "PATCH", recipeData)
-}

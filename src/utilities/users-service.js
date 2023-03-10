@@ -70,7 +70,7 @@ export async function logIn(credentials) {
     return getUser()
 }
 
-export  function checkToken() {
-    return userAPI.checkToken()
-        .then(dateStr => new Date(dateStr))
-}
+// export  function checkToken() {
+//     return userAPI.checkToken()
+//         .then(dateStr => new Date(dateStr))
+// }
