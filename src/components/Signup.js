@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import {useNavigate} from "react-router-dom"
 import './style.css';
+import Footer from "./Footer"
+
 
 function Signup(props) {
     const path = useNavigate()
@@ -17,7 +19,7 @@ function Signup(props) {
             [event.target.name]: event.target.value
         })
     }
-    function Signin(){
+    function Login(){
         path('/login')
     }
 
@@ -31,7 +33,7 @@ function Signup(props) {
     <div className="main">
      <div className="title">Recipe Food Forum</div>
      <form onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="username">username</label>
+        <label htmlFor="username">Username</label>
         <input
          type="username"
          placeholder="username"
@@ -57,8 +59,9 @@ function Signup(props) {
           />
 
     <button type="submit" className="signup">Signup</button>
-    <button className="signin" onClick={Signin}>Sign In</button>
+    <button className="signin" onClick={Login}>Log In</button>
     </form>
+    <Footer/>
     </div>
   );
 }
