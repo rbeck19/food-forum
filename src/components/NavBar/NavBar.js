@@ -8,12 +8,13 @@ export default function NavBar({ user, setUser }) {
         userService.logOut()
         setUser(null)
     }
+    console.log(user)
 
     return(
         <nav>
-            <Link to="/orders">Order History</Link>
+            <Link to="/main">Main Page</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/detail">Recipe Detail</Link>
             &nbsp; | &nbsp;
            <span>Welcome, {user.name}</span>
            &nbsp; | &nbsp;
