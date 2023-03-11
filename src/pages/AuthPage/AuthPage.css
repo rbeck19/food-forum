@@ -1,3 +1,8 @@
+.main1 {
+   height: 90vh;
+}
+
+
 .main {
     display: flex;
     justify-content: center;
@@ -9,14 +14,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;;
-    height: 100vh;
+    height: 65vh;
     margin: 0;
     padding: 0;
    }
 form {
-  margin-top: 3%;
   width: 60%;
-  height: 70%;
+  height: 56vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,8 +30,8 @@ form {
   border-radius: 3%;;
 }
 .title {
-    width: 80vw;
-    height: 35vh;
+    width: 100vw;
+    height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,4 +50,10 @@ form {
  }
  .toggle-text {
     color: white;
+    text-align: center;
+    margin: 0 auto;
+ }
+ .hello {
+    text-align: center;
+    margin: 0 auto;
  }
