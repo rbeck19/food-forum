@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import * as recipeAPI from "../../utilities/recipes-api"
 import { getUserInfo } from "../../utilities/users-service"
+import { Link } from "react-router-dom"
 
 export default function UserRecipes({ userId }) {
     const [recipes, setRecipes] = useState([])
@@ -38,7 +39,7 @@ export default function UserRecipes({ userId }) {
             <div className="recipes-container">
                 {recipesList}
             </div>
-
+            <Link to="/recipe_create">+</Link>
         </div>
 
     )

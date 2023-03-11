@@ -4,6 +4,7 @@ import AuthPage from "../AuthPage/AuthPage"
 import NavBar from "../../components/NavBar/NavBar";
 import MainPage from "../MainPage/MainPage"
 import UserRecipes from "../UserRecipes/UserRecipes"
+import CreatePage from "../CreatePage/CreatePage"
 import RecipeDetailPage from "../RecipeDetailPage/RecipeDetailPage"
 import './App.css';
 
@@ -32,6 +33,7 @@ export default function App() {
               <Route path="/main" element={<MainPage />} />
               <Route path="/user_recipes" element={<UserRecipes userId={userId}/>} />
               <Route path="/recipe_details" element={<RecipeDetailPage />} />
+              <Route path="/recipe_create" element={<CreatePage userId={userId}/>} />
             </Routes>
           </>
           :

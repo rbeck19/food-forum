@@ -7,11 +7,11 @@ export async function signUp(userData) {
     const token = await userAPI.signUp(userData)
 
     //this will save the token in local storage
-    localStorage.setItem("token", token.user.token)
-    localStorage.setItem("userName", token.user.email)
-    localStorage.setItem("userId", token.user.id)
-    console.log(token)
-    return getUser()
+    // localStorage.setItem("token", token.user.token)
+    // localStorage.setItem("userName", token.user.email)
+    // localStorage.setItem("userId", token.user.id)
+    // console.log(token)
+    return logIn(userData)
 }
 
 export function getToken() {

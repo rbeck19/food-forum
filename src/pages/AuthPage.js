@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Login from "../components/Login";
 import Signup from '../components/Signup';
 
-
 export default function AuthPage({ setUser }) {
     const [showForm, setShowForm] = useState(false);
   
