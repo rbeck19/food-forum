@@ -1,5 +1,6 @@
 
 /* CSS Custom Properties */
+
 :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
@@ -23,8 +24,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
+  
   padding: 2vmin;
   height: 100vh;
+  
 }
 
 code {

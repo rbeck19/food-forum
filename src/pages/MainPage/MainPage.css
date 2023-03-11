@@ -1,6 +1,7 @@
 *{
     border: 1px solid red;
 }
+
 .recipes-container{
     display: flex;
     flex-wrap: wrap;
@@ -9,6 +10,7 @@
     margin: 20px auto;
     padding: 20px;
 }
+
 .recipe-card{
     display: grid;
     background-color: gray;
@@ -16,11 +18,11 @@
     align-items: center;
     height: 150px;
     width: 150px;
-    padding: 20px;
-    margin: 20px;
     border-radius: 10px;
 }
+
 .recipe-card-button{
     padding: 0px;
     margin: 0px;
 }
+

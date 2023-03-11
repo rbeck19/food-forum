@@ -1,34 +1,35 @@
 import { useState } from "react";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LogInForm from "../../components/LogInForm/LogInForm";
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
     const [showForm, setShowForm] = useState(false);
 
     return(
-        <div className="main">
+        <div className="main1">
         <div className="title">Recipe Food Forum</div>
   
           {showForm ? (
-          <>
+          <div className="hello">
             <LogInForm setUser={setUser} />
-            <p class="toggle-text">
+            <div className="toggle-text">
             Need to make an account? <br></br>Sign up {" "}
-            <span class="toggle-text" onClick={() => setShowForm(!showForm)}>
+            <div className="toggle-text" onClick={() => setShowForm(!showForm)}>
               HERE
-            </span>
-          </p>
-          </>
+            </div>
+          </div>
+          </div>
           ) : (
-          <>
+          <div className="hello">
             <SignUpForm setUser={setUser} />
-            <p class="toggle-text">
+            <div className="toggle-text">
             Already have an account? {" "}
-            <span class="toggle-text" onClick={() => setShowForm(!showForm)}>
+            <div className="toggle-text" onClick={() => setShowForm(!showForm)}>
               LOG-IN
-            </span>
-          </p>
-          </>
+            </div>
+          </div>
+          </div>
           )}
         </div>
     )
