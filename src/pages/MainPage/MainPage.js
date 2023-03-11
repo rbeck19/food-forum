@@ -6,7 +6,6 @@ import './MainPage.css';
 export default function MainPage() {
     const [recipes, setRecipes] = useState(null)
     //let recipesList
-
     //get request to server to receive all recipe data
 
     useEffect(function() {
@@ -17,8 +16,12 @@ export default function MainPage() {
         getRecipes()
     }, [])  //run on 1st render only
 
-    const recipeList = recipes? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
+    if(recipes){
+        console.log(recipes.recipes)
+    }
 
+    const recipeList = recipes? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
+    
     return(
         <div className="main-page">
             <h2>Welcome to the Recipe Forum!</h2>
@@ -26,6 +29,5 @@ export default function MainPage() {
                 {recipes && recipeList}
             </div>
         </div>
-  
     )
 }
