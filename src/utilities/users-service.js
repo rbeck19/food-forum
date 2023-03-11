@@ -44,6 +44,7 @@ export function getToken() {
 export function getUser() {
         //use above function to obtain token
     const token = getToken()
+
     if (token) {
         // const payload = token.split(".")[1]
         // const decodedPayload = atob(payload)
