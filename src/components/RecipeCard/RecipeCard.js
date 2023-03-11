@@ -1,7 +1,9 @@
 export default function RecipeCard({ recipe }) {
     return (
-        <>
-        <h1>{recipe.title}</h1>
-        </>
+        <div>
+            <div key={recipe.id}>
+                <div className="recipe-card">{recipe.title}</div>
+            </div>
+        </div>
     )
 }

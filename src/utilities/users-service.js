@@ -8,6 +8,8 @@ export async function signUp(userData) {
 
     //this will save the token in local storage
     localStorage.setItem("token", token.user.token)
+    localStorage.setItem("userName", token.user.email)
+    localStorage.setItem("userId", token.user.id)
     console.log(token)
     return getUser()
 }
@@ -68,6 +70,8 @@ export function getUserInfo(str) {
 
 export function logOut() {
     localStorage.removeItem("token")
+    localStorage.removeItem("userName")
+    localStorage.removeItem("userId")
 }
 
 export async function logIn(credentials) {
