@@ -47,6 +47,7 @@ export async function logIn(credentials) {
 
 export default async function sendRequest(url, method="GET", payload=null) {
     const options = { method }
+    console.log(payload)
     if (payload){
         options.headers = { "Content-Type": "application/json" }
         options.body = JSON.stringify(payload)
