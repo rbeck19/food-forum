@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import * as recipeAPI from "../../utilities/recipes-api"
-
 import RecipeCard from "../../components/RecipeCard/RecipeCard"
+import './MainPage.css';
 
 export default function MainPage() {
     const [recipes, setRecipes] = useState([])
-    
+    let recipesList
 
     //get request to server to receive all recipe data
 
@@ -17,18 +17,22 @@ export default function MainPage() {
         getRecipes()
     }, [])  //run on 1st render only
 
- 
     //console.log(recipes)
-    //console.log(recipes.recipes[0].title)
-
-    //const recipeList = recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />)
+    if (recipes.length !== 0){
+        recipesList = recipes.recipes.map((recipe) =>(
+            <div key={recipe.id}>
+                <div className="recipe-card">{recipe.title}</div>
+            </div>
+    ))}
 
     return(
-        <>
-            <h2>Main Page</h2>
-        
+        <div className="main-page">
+            <h2>Welcome to the Recipe Forum!</h2>
+            <div className="recipes-container">
+                {recipesList}
+            </div>
             
-        </>
+        </div>
   
     )
 }

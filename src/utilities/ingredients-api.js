@@ -1,4 +1,4 @@
-import sendRequest from "./send-request";
+import { sendRequest } from "./users-api";
 
 const BASE_URL = "/api/ingredients/"
 

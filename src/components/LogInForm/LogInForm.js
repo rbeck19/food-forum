@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { logIn } from "../../utilities/users-service"
+import * as userAPI from "../../utilities/users-service"
 
 export default function LogInForm({ setUser }) {
 
@@ -23,6 +24,7 @@ export default function LogInForm({ setUser }) {
             event.preventDefault()
             const userToLogin = await logIn(credentials)
             setUser(userToLogin)
+            console.log(userToLogin)
         } catch {
             setError("Error Logging In")
         }
