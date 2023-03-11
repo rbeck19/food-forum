@@ -8,4 +8,7 @@ export function getALL() {
     return sendRequest(BASE_URL)
 }
 
-
+// POST Recipe
+export async function create(recipeData) {
+    return sendRequest(`${BASE_URL}`, 'POST', recipeData)
+}
