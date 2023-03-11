@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { signUp  } from "../../utilities/users-service"
 
+
+
 export default class SignUpForm extends Component {
     //state is just a POJO
     state = {
@@ -17,6 +19,8 @@ export default class SignUpForm extends Component {
             error:""
         })
     }
+    
+
 
     handleSubmit = async (event) => {
         event.preventDefault()
@@ -51,9 +55,9 @@ export default class SignUpForm extends Component {
     render() {
             //if password does not equal confirm:  FALSE
         const disable = this.state.password !== this.state.password_confirmation
-
+        
         return(
-            <div className="form-container">
+           <div className="form-container">
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <label>Email</label>
                     <input 

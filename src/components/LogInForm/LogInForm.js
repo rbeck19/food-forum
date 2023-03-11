@@ -2,6 +2,7 @@ import { useState } from "react"
 import { logIn } from "../../utilities/users-service"
 import * as userAPI from "../../utilities/users-service"
 
+
 export default function LogInForm({ setUser }) {
 
     const [credentials, setCredentials] = useState({
@@ -53,7 +54,7 @@ return (
        
         <button type="submit">Log In</button>
     </form>
-    <p className="error-message">{error}</p>
+    <p className="error-message"  id="login">{error}</p>
 </div>
 )
 }
