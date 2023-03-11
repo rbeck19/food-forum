@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { logIn } from "../../utilities/users-service"
-import * as userAPI from "../../utilities/users-service"
+//import * as userAPI from "../../utilities/users-service"
+//import SignUpForm from "../SignUpForm/SignUpForm"
+import './LoginForm.css';
 
 
-export default function LogInForm({ setUser }) {
+export default function LogInForm({ setUser, toggle }) {
 
     const [credentials, setCredentials] = useState({
         email: "",
@@ -32,7 +34,7 @@ export default function LogInForm({ setUser }) {
     }
 
 return (
-    <div className="form-container">
+    <div className="main">
     <form autoComplete="off" onSubmit={handleSubmit}>
         
         <label>Email</label>
