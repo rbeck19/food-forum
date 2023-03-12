@@ -20,7 +20,7 @@ export default function MainPage() {
         console.log(recipes.recipes)
     }
 
-    const recipeList = recipes? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
+    const recipeList = recipes ? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
     
     return(
         <div className="main-page">

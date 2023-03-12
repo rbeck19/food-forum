@@ -3,50 +3,100 @@ import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
+import Input from "./Input"
+import "./CreatePage.css"
 
 export default function CreatePage({userId}){
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [newItem, setNewItem] = useState("")
-    const steps = []
-    let newSteps = []
-
+    const [formValues, setFormValues] = useState([]);
+    const [formStepsValues, setFormStepsValues] = useState([]);
 
     const navigate = useNavigate()
 
+    //--------
     const handleTitleChange = (event) => {
         setTitle (event.target.value)
     }
-
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value)
     }
+    //---------
 
-    const handleStepsChange = (event) => {
-        console.log(newItem)
-        setNewItem(event.target.value)
-    }
+    // ---------Ingredients
+    const handleChange = (e, index) => {
+        const values = [...formValues];
+        values[index].value = e.target.value;
+        setFormValues(values);
+      };
+      const handleAddField = (e) => {
+        e.preventDefault();
+        const values = [...formValues];
+        values.push({
+          type: "text",
+          value: "",
+        });
+        setFormValues(values);
+      };
+      const handleDeleteField = (e, index) => {
+        const values = [...formValues];
+        values.splice(index, 1);
+        setFormValues(values);
+      };
+      //---------
 
-    const addStep = ()=> {
-       
-        newItem = ''
-        console.log(steps)
-        newSteps = steps.map((step)=>(
-             <div>{step}</div>
-        ))
-    }
 
-    // const handleAddIngredient = ()=>{}
-    // const handleIngredientsChange = ()=>{}
+      //-------Steps
+      const handleStepChange = (e, index) => {
+        const values = [...formStepsValues];
+        values[index].value = e.target.value;
+        setFormStepsValues(values);
+      };
+      const handleStepAddField = (e) => {
+        e.preventDefault();
+        const values = [...formStepsValues];
+        values.push({
+          type: "text",
+          value: "",
+        });
+        setFormStepsValues(values);
+      };
+      const handleStepDeleteField = (e, index) => {
+        const values = [...formStepsValues];
+        values.splice(index, 1);
+        setFormStepsValues(values);
+      };
+      //---------
 
- 
+
     async function handleSubmit(event) {
         try {
             event.preventDefault()
-            steps.push(newItem)
-            console.log(newItem)
+
+            console.log(title)
+            console.log(description)
+            console.log(
+              formValues.map((val) => {
+                return  val.value;
+              })
+            );
+
+            console.log(
+                formStepsValues.map((val) => {
+                  return  val.value;
+                })
+              );
+
+
+
+            const ingredients = formValues.map((val) => {return  val.value})
+            const steps = formStepsValues.map((val) => {return  val.value})
+
+            console.log(ingredients)
             console.log(steps)
-            const recipeData = {title, description, steps, owner : userId}
+
+            const recipeData = {title, description, ingredients, steps, owner : userId}
+
             console.log(recipeData)
             console.log(userId)
             await recipeAPI.create(recipeData)
@@ -57,18 +107,11 @@ export default function CreatePage({userId}){
         }
     }
 
-    
-
-
     return(
         <>
- 
-        
-
-        <div className='create-container'>
-            <form className='create-recipe-form' onSubmit={handleSubmit}>
-            <h2 className='new-recipe-title'>Create New Recipe</h2>
-                <input
+    <div className="App">
+          <form onSubmit={handleSubmit}>
+          <input
                     type='text'
                     name='title'
                     value={title}
@@ -82,32 +125,50 @@ export default function CreatePage({userId}){
                     onChange={handleDescriptionChange}
                     placeholder="Description"
                 ></input>
-                <textarea
-                    name='steps'
-                    value={newItem}
-                    onChange={handleStepsChange}
-                    placeholder="Steps"
-                ></textarea>
-                <div onClick={addStep}>+</div>
-               
-                <button className='button' type='submit'>Submit</button>
-            </form>
 
-            {/* <form className='add-ingredients' onSubmit={handleAddIngredient}>
-                <input
-                    type='text'
-                    name='name'
-                    value={name}
-                    onChange={handleIngredientsChange}
-                    placeholder='Ingredients'
-                ></input>
-                <button className='button' type='submit'>Submit</button>
-            </form> */}
+            <label>Ingredients:</label>
+            {formValues.map((obj, index) => (
+              <Input
+                key={index}
+                objValue={obj}
+                onChange={handleChange}
+                index={index}
+                deleteField={handleDeleteField}
+              />
+            ))}
+          <div className="center">
+            <button className="add-btn" onClick={handleAddField}>
+              Add new
+            </button>
+          </div>
 
-        </div>
+            <label>Steps:</label>
+            {formStepsValues.map((obj, index) => (
+              <Input
+                key={index}
+                objValue={obj}
+                onChange={handleStepChange}
+                index={index}
+                deleteField={handleStepDeleteField}
+              />
+            ))}
+          <div className="center">
+            <button className="add-btn" onClick={handleStepAddField}>
+              Add new
+            </button>
+          </div>
 
-        <Link to="/user_recipes">DONE</Link>
+            <button type="submit" className="submit-btn">
+            Submit
+            </button>
+          </form>
+    </div>
+      
+        <Link to="/user_recipes">Go Back To Your Recipes, curtsey of Greg</Link>
         </>
     )
 
 }
+
+// https://www.telerik.com/blogs/how-to-programmatically-add-input-fields-react-forms
+//adding field inputs from above source
