@@ -28,7 +28,7 @@ export default function CreatePage({userId}){
     }
 
     const addStep = ()=> {
-        steps.push(newItem)
+       
         newItem = ''
         console.log(steps)
         newSteps = steps.map((step)=>(
@@ -43,7 +43,7 @@ export default function CreatePage({userId}){
     async function handleSubmit(event) {
         try {
             event.preventDefault()
-            
+            steps.push(newItem)
             console.log(newItem)
             console.log(steps)
             const recipeData = {title, description, steps, owner : userId}

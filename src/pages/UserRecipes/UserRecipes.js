@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 import * as recipeAPI from "../../utilities/recipes-api"
+import { useNavigate } from 'react-router-dom'
 import { getUserInfo } from "../../utilities/users-service"
+import RecipeCard from "../../components/RecipeCard/RecipeCard"
 import { Link } from "react-router-dom"
 
 export default function UserRecipes({ userId }) {
     const [recipes, setRecipes] = useState([])
+    const navigate = useNavigate()
     let recipesList
     let userRecipes = []
 
@@ -24,22 +27,25 @@ export default function UserRecipes({ userId }) {
             }
         })
         console.log(userRecipes)
-        if (userRecipes.length !== 0){
-            recipesList = userRecipes.map((recipe) =>(
-                <div key={recipe.id}>
-                    <div className="recipe-card">{recipe.title}</div>
-                </div>
+        if (userRecipes.length !== 0) {
+            recipesList = userRecipes.map((recipe) => (
+                <div key={recipe.id} className="recipe-card">{recipe.title}</div>
             ))
         }
     }
-
+    function handleClick(){
+        navigate("/recipe_create")
+        //console.log('clicked')
+    }
     return (
         <div className="main-page">
             <h2>Your Recipes!</h2>
             <div className="recipes-container">
                 {recipesList}
+                <div className="recipe-card-plus" onClick={handleClick}>+
+                </div>
             </div>
-            <Link to="/recipe_create">+</Link>
+
         </div>
 
     )

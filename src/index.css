@@ -1,157 +1,302 @@
-
-/* CSS Custom Properties */
-
-:root {
-  --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
-  --text-light: #968c84;
-  --text-dark: #615954;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
+* {
+  border: 0px solid red;
+  text-decoration: none;
 }
 
 body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  min-width: 480px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  
-  padding: 2vmin;
-  height: 100vh;
-  
+  padding: 0;
+  background-color: whitesmoke;
+  background-image: url("./assets/food-outline-icon-on-blue-background-breakfast-background-seamless-pattern-for-printing-wallpaper-decoration-illustration-free-vector.jpeg");
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin: auto;
+  min-width: 480px;
 }
-
-#root {
-  height: 100%;
-}
-
-.align-ctr {
+/**************************
+AUTH PAGES - LOGIN SIGNUP
+**************************/
+.header {
   text-align: center;
 }
 
-.align-rt {
-  text-align: right;
+.login-page {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://itk-assets.nyc3.cdn.digitaloceanspaces.com/2021/04/Screen-Shot-2021-04-15-at-10.45.48-AM-scaled.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
-.smaller {
-  font-size: smaller;
+.login-container {
+  background-color: rgba(245, 245, 245, 0.85);
+  border-radius: 6px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.85);
 }
 
-.flex-ctr-ctr {
+.login-form {
+  margin: 16px;
+}
+
+.login-input {
+  display: grid;
+  grid-template-columns: 80px 160px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(30, 30, 30);
+  padding: 10px;
+  margin: 5px;
+}
+
+.login-input>label {
+  display: grid;
+  align-items: center;
+  height: 26px;
+}
+
+.login-input>input {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  height: 24px;
+  border: 2px solid rgb(120, 120, 200);
+  border-radius: 4px;
+}
+
+.login-button,
+.signup-button {
+  display: grid;
+  margin: 10px auto;
+  grid-column: span 2;
+  width: 120px;
+  background-color: rgb(120, 120, 200);
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+}
+
+.toggle-text {
+  text-align: center;
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.toggle-text>span {
+  color: rgb(80, 80, 200);
+  cursor: pointer;
+}
+
+/**************************
+NAV
+**************************/
+.nav-bar{
+  height: 40px;
+  width: 100%;
+  background-color: rgb(66, 66, 125);
+  color: white;
+}
+.nav-bar-contents {
+  margin: 10px auto;
+  max-width: 1024px;
+}
+.nav-left {
+  float: left;
+  margin-left: 20px;
+}
+
+.nav-right {
+  float: right;
+  margin-right: 20px;
+}
+/**************************
+LINKS
+**************************/
+.link{
+  color: pink;
+}
+/**************************
+MAIN PAGE
+**************************/
+h2 {
+  margin: 20px auto;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+}
+
+.recipes-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.recipe-card,
+.recipe-card-plus {
+  display: grid;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  font-size: 32px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+.recipe-card-plus {
+  font-size: 120px;
+}
+
+/**************************
+CREATE PAGE
+**************************/
+.create-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  margin: auto;
+  padding: 0px;
+}
+
+.create-left-grid,
+.create-right-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 450px;
+  margin: 16px 20px;
+}
+
+.recipe-title-container,
+.recipe-description-container,
+.recipe-ingredients-container,
+#steps-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+}
+
+.recipe-description-container {
+  margin: 10px 0;
+}
+
+.create-page-labels {
+  padding: 5px;
+  font-weight: bold;
+}
+.new-step{
+  margin-top: 5px 0;
+  margin-bottom: 5px;
+}
+textarea {
+  resize: none;
+  width: 400px;
+  height: 60px;
+  border: 2px solid rgb(120, 120, 200);
+  border-radius: 4px;
+}
+
+.create-inputs {
+  height: 24px;
+  border: 2px solid rgb(120, 120, 200);
+  border-radius: 4px;
+}
+
+#recipe-title-input {
+  width: 320px;
+}
+
+#recipe-ingredients-input {
+  width: 400px;
+}
+
+.create-page-buttons,
+.create-recipe-button {
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 120px;
+  background-color: rgb(120, 120, 200);
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.create-recipe-button {
+  /* box-shadow: 0px 0px 6px rgba(0, 0, 0, 1); */
+  border: 2px solid whitesmoke;
+  background-color: rgb(66, 66, 125);
+  font-size: 24px;
+  margin-bottom: 36px;
+  border-radius: 8px;
+}
+.create-container {
+  display: grid;
   justify-content: center;
   align-items: center;
 }
 
-.flex-col {
-  flex-direction: column;
+/**************************
+MISC STUFF
+**************************/
+::-webkit-input-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: gray;
+  text-align: left;
 }
 
-.flex-j-end {
-  justify-content: flex-end;
+:-moz-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: gray;
+  text-align: left;
 }
 
-.scroll-y {
-  overflow-y: scroll;
+::-moz-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: gray;
+  text-align: left;
 }
 
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--tan-1);
-  color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
+::-ms-input-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: gray;
+  text-align: left;
 }
 
-.form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-}
-
-p.error-message {
-  color: var(--orange);
-  text-align: center;
-}
-
-form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
-}
-
-label {
-  font-size: 2vmin;
-  display: flex;
-  align-items: center;
-}
-
-input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
-}
-
-input:focus {
-  border-color: var(--orange);
-}
-
-button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
-  outline: none;
-  cursor: pointer;
-}
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
-}
-
-button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--tan-4);
-}
-
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

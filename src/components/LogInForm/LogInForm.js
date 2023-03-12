@@ -2,10 +2,10 @@ import { useState } from "react"
 import { logIn } from "../../utilities/users-service"
 //import * as userAPI from "../../utilities/users-service"
 //import SignUpForm from "../SignUpForm/SignUpForm"
-import './LoginForm.css';
+import '../../index.css';
 
 
-export default function LogInForm({ setUser, toggle }) {
+export default function LogInForm({ setUser, showForm, setShowForm }) {
 
     const [credentials, setCredentials] = useState({
         email: "",
@@ -14,49 +14,58 @@ export default function LogInForm({ setUser, toggle }) {
 
     const [error, setError] = useState("")
 
-    function handleChange (event) {
-            //clone the state and update it with new key value
+    function handleChange(event) {
+        //clone the state and update it with new key value
         setCredentials({
             ...credentials,
             [event.target.name]: event.target.value
         })
     }
 
-    async function handleSubmit (event){
-        try {        
+    async function handleSubmit(event) {
+        try {
             event.preventDefault()
             const userToLogin = await logIn(credentials)
             setUser(userToLogin)
             console.log(userToLogin)
         } catch {
-            setError("Error Logging In")
+            setError("Invalid Login Credentials")
         }
     }
 
-return (
-    <div className="main">
-    <form autoComplete="off" onSubmit={handleSubmit}>
-        
-        <label>Email</label>
-        <input 
-            type="email"
-            name="email"
-            value={credentials.email}
-            onChange={handleChange}
-            required
-        />
-        <label>Password</label>
-        <input 
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-            required
-        />
-       
-        <button type="submit">Log In</button>
-    </form>
-    <p className="error-message"  id="login">{error}</p>
-</div>
-)
+    return (
+        <form className="login-container" autoComplete="off" onSubmit={handleSubmit}>
+            <div className="login-form">
+                <div className="header">Recipe Food Forum</div>
+                <div className="login-input">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={credentials.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="login-input">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={credentials.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button className="login-button" type="submit">Log In</button>
+                <div className="toggle-text">
+                    Need to make an Account?
+                </div>
+                <div className="toggle-text">Sign Up&nbsp;
+                    <span onClick={() => setShowForm(!showForm)}>Here</span>
+                </div>
+                <div className="error-message" id="login">{error}</div>
+            </div>
+        </form>
+    )
 }
