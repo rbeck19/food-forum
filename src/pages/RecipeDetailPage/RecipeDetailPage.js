@@ -21,6 +21,20 @@ export default function RecipeDetailPage() {
         getRecipes()
         console.log(recipes)
     }, [])
+
+      // remove ingredient from order
+  async function handleRemoveRecipe(event) {
+    event.preventDefault()
+    console.log("Deleting recipe: ", recipes.id)
+
+    //Remove from DB
+    await recipeAPI.remove(recipes.id)
+
+    // Return to main page
+  }
+
+
+
     return(
         <>
         <h2>Recipe Detail Page</h2>
@@ -30,6 +44,7 @@ export default function RecipeDetailPage() {
         <p>{recipes.ingredients}</p>
         <p>{recipes.comments}</p>
         </div>
+        <button onClick={handleRemoveRecipe}>Delete Recipe</button>
         </>
     )
 }

@@ -23,3 +23,9 @@ export async function show(data_Id) {
     }
 }
 
+// DELETE Recipe
+export async function remove(recipeId) {
+    return sendRequest(`${BASE_URL}${recipeId}`, "DELETE")
+}
+
+// UPDATE Recipe
