@@ -24,9 +24,12 @@ export default function RecipeDetailPage() {
     return(
         <>
         <h2>Recipe Detail Page</h2>
+        <div className='detail-container'>
         <p>{recipes.title}</p>
-        <p>{recipes.description}</p>
         <p>{recipes.steps}</p>
+        <p>{recipes.ingredients}</p>
+        <p>{recipes.comments}</p>
+        </div>
         </>
     )
 }
