@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import * as recipeAPI from "../../utilities/recipes-api"
 import RecipeCard from "../../components/RecipeCard/RecipeCard"
-import './MainPage.css';
+import '../../index.css';
 
 export default function MainPage() {
     const [recipes, setRecipes] = useState(null)

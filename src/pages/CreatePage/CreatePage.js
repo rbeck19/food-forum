@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 export default function CreatePage({userId}){
@@ -9,9 +9,10 @@ export default function CreatePage({userId}){
     const [description, setDescription] = useState('')
     const [newItem, setNewItem] = useState("")
     const steps = []
+    let newSteps = []
 
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const handleTitleChange = (event) => {
         setTitle (event.target.value)
@@ -26,6 +27,18 @@ export default function CreatePage({userId}){
         setNewItem(event.target.value)
     }
 
+    const addStep = ()=> {
+       
+        newItem = ''
+        console.log(steps)
+        newSteps = steps.map((step)=>(
+             <div>{step}</div>
+        ))
+    }
+
+    // const handleAddIngredient = ()=>{}
+    // const handleIngredientsChange = ()=>{}
+
  
     async function handleSubmit(event) {
         try {
@@ -37,12 +50,14 @@ export default function CreatePage({userId}){
             console.log(recipeData)
             console.log(userId)
             await recipeAPI.create(recipeData)
-            navigate('/user_recipes')
+            // navigate('/user_recipes')
             return recipeData
         } catch(err) {
             console.error(err)
         }
     }
+
+    
 
 
     return(
@@ -73,9 +88,22 @@ export default function CreatePage({userId}){
                     onChange={handleStepsChange}
                     placeholder="Steps"
                 ></textarea>
+                <div onClick={addStep}>+</div>
                
                 <button className='button' type='submit'>Submit</button>
             </form>
+
+            {/* <form className='add-ingredients' onSubmit={handleAddIngredient}>
+                <input
+                    type='text'
+                    name='name'
+                    value={name}
+                    onChange={handleIngredientsChange}
+                    placeholder='Ingredients'
+                ></input>
+                <button className='button' type='submit'>Submit</button>
+            </form> */}
+
         </div>
 
         <Link to="/user_recipes">DONE</Link>
