@@ -163,10 +163,17 @@ h2 {
   border-radius: 10px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
   cursor: pointer;
+ text-align: center;
 }
 
 .recipe-card-plus {
   font-size: 120px;
+}
+
+.recipe-description {
+  word-wrap: break-word;
+  font-size: small;
+  text-align: center;
 }
 
 /**************************
@@ -299,4 +306,14 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+/**************************
+Detail page
+**************************/
+
+.detail-container {
+  border: solid black 2px;
+  text-align: center;
 }

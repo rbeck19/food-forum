@@ -1,12 +1,12 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 //import { useEffect, useState } from "react"
 // import '../../index.css'
 
 export default function RecipeCard({ recipe }) {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     function handleClick(){
-        navigate('/recipe_details')
+        // navigate('/recipe_details')
         //console.log('clicked')
     }
 
@@ -15,7 +15,7 @@ export default function RecipeCard({ recipe }) {
 
     return (
             <div key={recipe.id}>
-                <button className="recipe-card" onClick={handleClick}>{recipe.title}</button>
+                <Link to='/recipe_details' state={{ from: recipe}} className="recipe-card" >{recipe.title} <p className='recipe-description'>{recipe.description}</p></Link>
             </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 export default function CreatePage({userId}){
@@ -12,7 +12,7 @@ export default function CreatePage({userId}){
     let newSteps = []
 
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleTitleChange = (event) => {
         setTitle (event.target.value)
@@ -50,7 +50,7 @@ export default function CreatePage({userId}){
             console.log(recipeData)
             console.log(userId)
             await recipeAPI.create(recipeData)
-            // navigate('/user_recipes')
+            navigate('/user_recipes')
             return recipeData
         } catch(err) {
             console.error(err)

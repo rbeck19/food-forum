@@ -12,3 +12,14 @@ export function getALL() {
 export async function create(recipeData) {
     return sendRequest(`${BASE_URL}`, 'POST', recipeData)
 }
+
+// SHOW Recipe
+export async function show(data_Id) {
+    try {
+        const recipe = await sendRequest(`${BASE_URL}${data_Id}/`)
+        return recipe
+    } catch(err) {
+        console.error(err)
+    }
+}
+
