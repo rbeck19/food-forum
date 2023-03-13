@@ -15,12 +15,16 @@
 - As a user, I want to view all recipes
 - As a user, I want to view a single recipe
 - As a user, I want to create a recipe with a name and description
-- As a user, I want to be able to edit a recipes name and description
-- As a user, I want to delete a recipe
+- As a user, I want to be able to edit my recipes name and description
+- As a user, I want to delete my recipe
+- As a user, I want to be able to add steps to my recipe
+- As a user, I want to be able to add ingredients to my recipe
 - As a user, I want to be able to sign-in
 - As a user, I want to be able to sign-up
 - As a user, I want to be able to sign-out
-- As a user, I want to be able comment on a recipe
+- As a user, I want to be able to create a comment 
+- As a user, I want to be able to delete my comment
+
 
 
 ## Version 2
