@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LogInForm from "../../components/LogInForm/LogInForm";
+import Footer from "../../components/Footer/Footer";
 import '../../index.css'
 
 export default function AuthPage({ setUser }) {
@@ -12,12 +13,14 @@ export default function AuthPage({ setUser }) {
 
       {!showForm ? (
         <div className="login-page">
+            <div className="title">Recipe Food Forum</div>
           <LogInForm setUser={setUser} showForm={showForm} setShowForm={setShowForm}/>
-          
+          <Footer/>
         </div>
       ) : (
         <div className="login-page">
           <SignUpForm setUser={setUser} showForm={showForm} setShowForm={setShowForm}/>
+          <Footer/>
         </div>
       )}
     </>

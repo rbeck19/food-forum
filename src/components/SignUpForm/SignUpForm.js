@@ -60,7 +60,6 @@ export default class SignUpForm extends Component {
 
             <form className="login-container" autoComplete="off" onSubmit={this.handleSubmit}>
                 <div className="login-form">
-                    <div className="header">Recipe Food Forum</div>
                     <div className="login-input">
                         <label>Email</label>
                         <input

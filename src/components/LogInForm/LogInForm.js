@@ -36,7 +36,6 @@ export default function LogInForm({ setUser, showForm, setShowForm }) {
     return (
         <form className="login-container" autoComplete="off" onSubmit={handleSubmit}>
             <div className="login-form">
-                <div className="header">Recipe Food Forum</div>
                 <div className="login-input">
                     <label>Email</label>
                     <input
