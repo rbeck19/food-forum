@@ -87,8 +87,6 @@ export default function CreatePage({userId}){
                 })
               );
 
-
-
             const ingredients = formValues.map((val) => {return  val.value})
             const steps = formStepsValues.map((val) => {return  val.value})
 
