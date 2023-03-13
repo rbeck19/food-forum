@@ -34,7 +34,7 @@ export default function App() {
               <Route path="/" element={<MainPage />} />
               <Route path="/main" element={<MainPage />} />
               <Route path="/user_recipes" element={<UserRecipes userId={userId}/>} />
-              <Route path="/recipe_details" element={<RecipeDetailPage userId={userId}/>} />
+              <Route path="/recipe_details" element={<RecipeDetailPage userId={userId}  userName={userName}/>} />
               <Route path="/recipe_create" element={<CreatePage userId={userId}/>} />
               <Route path="/update" element={<UpdateForm userId={userId}/>} />
               <Route path="/footer" element={<Footer/>} />

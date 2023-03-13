@@ -6,7 +6,7 @@ import RecipeDetailIngredient from "../../components/RecipeDetailIngredient/Reci
 import RecipeDetailStep from "../../components/RecipeDetailStep/RecipeDetailStep";
 import Comment from "../../components/Comment/Comment";
 
-export default function RecipeDetailPage({userId}) {
+export default function RecipeDetailPage({userId, userName}) {
   const [recipes, setRecipes] = useState("");
   const [comment, setComment] = useState("");
   const [note, setNote] = useState("");
@@ -68,7 +68,7 @@ export default function RecipeDetailPage({userId}) {
     : "";
 
   const comments = comment
-    ? comment.map((comment, index) => <Comment comment={comment} key={index} userId={userId}  handleDelete={handleDelete} />)
+    ? comment.map((comment, index) => <Comment comment={comment} key={index} userId={userId} userName={userName} handleDelete={handleDelete} />)
     : "";
 
     const handleChange = (event) => {
