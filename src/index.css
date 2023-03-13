@@ -35,6 +35,8 @@ AUTH PAGES - LOGIN SIGNUP
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  margin: 0 auto;
 }
 .title {
   position: relative;
@@ -46,13 +48,12 @@ AUTH PAGES - LOGIN SIGNUP
   align-items: center;
   font-size: 100px;
   color: white;
-  border: solid brown 2px;
   margin: 0 auto;
   padding: 3%;
   background-color: orange;
   opacity: 0.8;
   font-family: 'Rampart One', cursive;
-
+  border: 3px solid white;
 }
 
 .login-container {
@@ -61,6 +62,8 @@ AUTH PAGES - LOGIN SIGNUP
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.85);
   position: relative;
   top: -15%;
+  width: 400px;
+  margin: 0 auto;
 }
 
 .login-form {
@@ -402,4 +405,21 @@ Footer page
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1750px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 30px;
+    width: 60vw;
+  }
+  .login-container {
+    width: 300px;
+  }
 }
