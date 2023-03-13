@@ -1,16 +1,15 @@
 import * as commentAPI from "../../utilities/comment-api";
 
 export default function Comment({ comment, userId, userName, handleDelete }) {
-    console.log(comment)
-    console.log(comment.id)
-    console.log(comment.owner)
-    console.log(userId)
+
     const commentId = comment.id
 
+    const user = comment.owner.split("@")
     
+
     return (
         <>
-        <div><h2>{comment.note}</h2>  <p>posted by:{comment.owner}</p></div>
+        <div><h2>{comment.note}</h2>  <p>posted by: {user[0]}</p></div>
         {userName == comment.owner ? <button className='delete-comment button' onClick={() => handleDelete(commentId)}>Delete</button> : null}
         </>
     )

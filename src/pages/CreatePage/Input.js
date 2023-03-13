@@ -26,7 +26,7 @@ export default function Input({ objValue, onChange, index, deleteField, formValu
     formInputDel(formValues)
     formInputDel(formStepsValues)
     
-  }, [formValues], [formStepsValues])
+  }, [formStepsValues, formValues])
 
   function toggleDeleteButton() {
     return <div className="delete-container"><button type='button' onClick={(e) => deleteField(e, index)}>&#x2715;</button></div>
