@@ -9,9 +9,9 @@ export function getComments() {
 }
 
 // POST comment
-export async function createComment(recipeId, comment) {
+export async function createComment(comment) {
     try {
-        const recipe = await sendRequest(`${BASE_URL}${recipeId}/`, 'POST', comment)
+        const recipe = await sendRequest(`${BASE_URL}`, 'POST', comment)
         return recipe
     } catch(err) {
         console.error(err)
@@ -20,9 +20,9 @@ export async function createComment(recipeId, comment) {
 
 
 // DELETE comment
-export async function deleteComment(recipeId, commentId) {
+export async function deleteComment(commentId) {
     try {
-        await sendRequest(`${BASE_URL}${recipeId}/`, 'DELETE', commentId)
+        await sendRequest(`${BASE_URL}${commentId}/`, 'DELETE')
         return 
     } catch (err) {
         console.error(err)
