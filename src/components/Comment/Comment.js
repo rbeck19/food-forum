@@ -1,6 +1,6 @@
 import * as commentAPI from "../../utilities/comment-api";
 
-export default function Comment({ comment, userId, handleDelete }) {
+export default function Comment({ comment, userId, userName, handleDelete }) {
     console.log(comment)
     console.log(comment.id)
     console.log(comment.owner)
@@ -11,7 +11,7 @@ export default function Comment({ comment, userId, handleDelete }) {
     return (
         <>
         <div><h2>{comment.note}</h2>  <p>posted by:{comment.owner}</p></div>
-        {userId == comment.owner ? <button className='delete-comment button' onClick={() => handleDelete(commentId)}>Delete</button> : null}
+        {userName == comment.owner ? <button className='delete-comment button' onClick={() => handleDelete(commentId)}>Delete</button> : null}
         </>
     )
 }
