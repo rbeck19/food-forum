@@ -19,6 +19,7 @@ export default function AuthPage({ setUser }) {
         </div>
       ) : (
         <div className="login-page">
+            <div className="title">Recipe Food Forum</div>
           <SignUpForm setUser={setUser} showForm={showForm} setShowForm={setShowForm}/>
           <Footer/>
         </div>
