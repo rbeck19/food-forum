@@ -27,3 +27,13 @@ export async function show(data_Id) {
 export async function remove(recipeId) {
     return sendRequest(`${BASE_URL}${recipeId}/`, "DELETE")
 }
+
+// UPDATE
+export async function update(recipeId, recipeData) {
+    try {
+        const recipe = await sendRequest(`${BASE_URL}${recipeId}/`, 'PATCH', recipeData)
+        return recipe
+    } catch(err) {
+        console.error(err)
+    }
+}

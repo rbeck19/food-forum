@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import * as recipeAPI from "../../utilities/recipes-api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getUserInfo } from "../../utilities/users-service";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
-import { Link } from "react-router-dom";
+
 
 export default function UserRecipes({ userId }) {
   const [recipes, setRecipes] = useState([]);
@@ -44,17 +44,24 @@ export default function UserRecipes({ userId }) {
       recipesList = userRecipes.map((recipe) => (
         <>
           <div key={recipe.id} className="recipe-card">
-            {recipe.title}
+
+            
+
+            <Link to='/update' state={{ from: recipe}}> {recipe.title} </Link>
+
+
             <button onClick={() => handleDelete(recipe.id)}>Delete</button>
           </div>
         </>
       ));
     }
   }
+
   function handleClick() {
     navigate("/recipe_create");
     //console.log('clicked')
   }
+
   return (
     <div className="main-page">
       <h2>Your Recipes!</h2>
