@@ -1,6 +1,6 @@
 import * as commentAPI from "../../utilities/comment-api";
 
-export default function Comment({ comment, userId }) {
+export default function Comment({ comment, userId, handleDelete }) {
     console.log(comment)
     console.log(comment.id)
     console.log(comment.owner)
@@ -8,14 +8,6 @@ export default function Comment({ comment, userId }) {
     const commentId = comment.id
 
     
-    async function handleDelete(commentId){
-        try{
-            await commentAPI.deleteComment(commentId)
-        }catch(err){
-            console.log(err)
-        }
-    }
-
     return (
         <>
         <div><h2>{comment.note}</h2>  <p>posted by:{comment.owner}</p></div>

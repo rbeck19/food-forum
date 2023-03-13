@@ -43,6 +43,18 @@ export default function RecipeDetailPage({userId}) {
     setRender(true)
   }, [render]);
 
+
+
+  async function handleDelete(commentId){
+    try{
+        await commentAPI.deleteComment(commentId)
+        setRender(false)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
   const recipeIngredient = recipes
     ? recipes.ingredients.map((ingredient, index) => (
         <RecipeDetailIngredient ingredient={ingredient} key={index} />
@@ -56,7 +68,7 @@ export default function RecipeDetailPage({userId}) {
     : "";
 
   const comments = comment
-    ? comment.map((comment, index) => <Comment comment={comment} key={index} userId={userId}/>)
+    ? comment.map((comment, index) => <Comment comment={comment} key={index} userId={userId}  handleDelete={handleDelete} />)
     : "";
 
     const handleChange = (event) => {
@@ -71,6 +83,7 @@ export default function RecipeDetailPage({userId}) {
             const newComment = {note, owner: userId, recipe: from.id}
             await commentAPI.createComment(newComment)
             setRender(false)
+            setNote("")
             // const post = await postAPI.show(recipeId)
         } catch(err){
             console.error(err)
