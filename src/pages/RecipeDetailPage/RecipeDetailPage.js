@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import * as recipeAPI from "../../utilities/recipes-api"
+import * as commentAPI from "../../utilities/comment-api"
 import RecipeDetailIngredient from '../../components/RecipeDetailIngredient/RecipeDetailIngredient'
 import RecipeDetailStep from '../../components/RecipeDetailStep/RecipeDetailStep'
+import Comment from '../../components/Comment/Comment'
+
 
 
 export default function RecipeDetailPage() {
     const [recipes, setRecipes] = useState("")
-    // let recipesList
-    // let userRecipes = []
-    // const { recipeId } = useParams()
+    const [comment, setComment] = useState("")
 
     const recipeInfo = useLocation()
     const { from } = recipeInfo.state
-    console.log(from.id)
-    console.log(from)
 
     useEffect(function () {
        
@@ -28,9 +27,28 @@ export default function RecipeDetailPage() {
         console.log(recipes)
     }, [])
 
+    useEffect(function () {
+       
+        async function getComments() {
+            const comments = await commentAPI.getComments()
+            console.log(from.id)
+            console.log(comments)
+            const result = comments.comments.filter(comment => comment.recipe === from.id)
+            setComment(result)
+            console.log(comment)
+            console.log(result)
+        }
+        getComments()
+        console.log(comment)
+    }, [])
+  
+
     const recipeIngredient = recipes ?  recipes.ingredients.map((ingredient, index) => <RecipeDetailIngredient ingredient={ingredient} key={index}/>) : ""
 
     const recipeStep = recipes ? recipes.steps.map((step, index) => <RecipeDetailStep step={step} key={index} />) : ""
+
+    const comments = comment ? comment.map((comment, index) => <Comment comment={comment} key={index} />) : ""
+
 
     return(
         <>
@@ -43,8 +61,9 @@ export default function RecipeDetailPage() {
         {recipes && recipeIngredient}
         {recipes && recipeStep}
 
-        <p>{recipes.comments}</p>
+        {comment && comments}
 
         </>
     )
 }
+
