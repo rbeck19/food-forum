@@ -13,14 +13,14 @@ export default function Input({ objValue, onChange, index, deleteField }) {
 
   return (
     <div className="input-group">
-      <div className="input">
-        <input
+      <div>
+        <input id='recipe-ingredients-input' className='create-inputs'
           type={"text"}
           value={handleValue(objValue)}
           onChange={(e) => onChange(e, index)}
         />
-        <div onClick={(e) => deleteField(e, index)}>X</div>
-      </div>
+        </div>
+        <div className="delete-container"><button type='button' onClick={(e) => deleteField(e, index)}>&#x2715;</button></div>
     </div>
   )
 }
