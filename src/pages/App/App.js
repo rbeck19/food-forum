@@ -7,6 +7,7 @@ import UserRecipes from "../UserRecipes/UserRecipes"
 import CreatePage from "../CreatePage/CreatePage"
 import RecipeDetailPage from "../RecipeDetailPage/RecipeDetailPage"
 import UpdateForm from "../UpdateForm/UpdateForm"
+import Footer from "../../components/Footer/Footer"
 import './App.css';
 
 import { getUser, getUserInfo } from "../../utilities/users-service"
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/recipe_details" element={<RecipeDetailPage />} />
               <Route path="/recipe_create" element={<CreatePage userId={userId}/>} />
               <Route path="/update" element={<UpdateForm userId={userId}/>} />
+              <Route path="/footer" element={<Footer/>} />
             </Routes>
           </>
           :
