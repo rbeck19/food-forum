@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
 import { useNavigate } from "react-router-dom"
+import Axios from "axios"
+import {Image} from "cloudinary-react"
 import Input from "./Input"
 
 export default function CreatePage({ userId }) {
@@ -9,6 +11,7 @@ export default function CreatePage({ userId }) {
   const [description, setDescription] = useState('')
   const [formValues, setFormValues] = useState([{ type: 'text', value: '' }]);
   const [formStepsValues, setFormStepsValues] = useState([{ type: 'text', value: '' }]);
+  const [image, setImage] = useState(null)
   const placeholderIngredient = 'Add an Ingredient'
   const placeholderStep = 'Add a Step'
 
@@ -21,6 +24,17 @@ export default function CreatePage({ userId }) {
     setDescription(event.target.value)
   }
   //---------
+
+  const uploadImage = (files) => {
+    console.log(files[0])
+    const formData = new FormData()
+    formData.append("file", files[0])
+    formData.append("upload_preset", "mw5q7bli")
+
+    Axios.post("https://api.cloudinary.com/v1_1/dhjlwaryv/image/upload", formData) 
+    .then((res) => setImage(res.data.url)) 
+  }
+
 
   // ---------Ingredients
   const handleChange = (e, index) => {
@@ -77,7 +91,7 @@ export default function CreatePage({ userId }) {
       const steps = formStepsValues.map((val) => { return val.value })
 
 
-      const recipeData = { title, description, ingredients, steps, owner: userId }
+      const recipeData = { title, description, ingredients, steps, image, owner: userId }
 
       await recipeAPI.create(recipeData)
       navigate('/user_recipes')
@@ -149,6 +163,13 @@ export default function CreatePage({ userId }) {
                 Add Step
               </button>
             </div>
+
+            <div className='recipe-title-container'>
+
+            <input type="file" name="image" accept="image/png, image/jpeg" onChange={(event) => {uploadImage(event.target.files)}}/>
+
+            </div>
+
           </div>
         </div>
         <div className='create-container'>
@@ -156,9 +177,12 @@ export default function CreatePage({ userId }) {
             Submit
           </button></div>
       </form>
+        <Image style={{width:200}}cloudName="dhjlwaryv" publicId={image} />
     </div>
   )
 }
+
+
 
 // https://www.telerik.com/blogs/how-to-programmatically-add-input-fields-react-forms
 //adding field inputs from above source

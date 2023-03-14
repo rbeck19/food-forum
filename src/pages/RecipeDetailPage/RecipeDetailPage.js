@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import {Image} from "cloudinary-react"
 import * as recipeAPI from "../../utilities/recipes-api";
 import * as commentAPI from "../../utilities/comment-api";
 import RecipeDetailIngredient from "../../components/RecipeDetailIngredient/RecipeDetailIngredient";
@@ -86,8 +87,8 @@ export default function RecipeDetailPage({userId, userName}) {
       <div className="main-container">
 
         <div className = "main-container-ingredients">
-            <img className="recipe-img"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGNlEfUupad2tsTTG6s7ym57Tq1nchq13SA&usqp=CAU" />
-
+            {/* <img className="recipe-img"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGNlEfUupad2tsTTG6s7ym57Tq1nchq13SA&usqp=CAU" /> */}
+            <Image style={{width:200}}cloudName="dhjlwaryv" publicId={recipes.image} />
             
             <div className="recipe-engredient-container">
             <h2 className="ingredients-header">Ingredients</h2>
