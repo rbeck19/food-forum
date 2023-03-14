@@ -2,9 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
 import { useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
 import Input from "./Input"
-// import "./CreatePage.css"
 
 export default function CreatePage({ userId }) {
   const [title, setTitle] = useState('')
@@ -36,7 +34,6 @@ export default function CreatePage({ userId }) {
       value: "",
     });
     setFormValues(values);
-    // console.log(formValues.length)
   };
   const handleDeleteField = (e, index) => {
     const values = [...formValues];
@@ -73,30 +70,13 @@ export default function CreatePage({ userId }) {
     try {
       event.preventDefault()
 
-      console.log(title)
-      console.log(description)
-      console.log(
-        formValues.map((val) => {
-          return val.value;
-        })
-      );
-
-      console.log(
-        formStepsValues.map((val) => {
-          return val.value;
-        })
-      );
 
       const ingredients = formValues.map((val) => { return val.value })
       const steps = formStepsValues.map((val) => { return val.value })
 
-      console.log(ingredients)
-      console.log(steps)
 
       const recipeData = { title, description, ingredients, steps, owner: userId }
 
-      console.log(recipeData)
-      console.log(userId)
       await recipeAPI.create(recipeData)
       navigate('/user_recipes')
       return recipeData
@@ -172,7 +152,6 @@ export default function CreatePage({ userId }) {
             Submit
           </button></div>
       </form>
-      {/* <Link to="/user_recipes">Go Back To Your Recipes, curtsey of Greg</Link> */}
     </div>
   )
 }

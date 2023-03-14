@@ -9,7 +9,6 @@ export default function AuthPage({ setUser }) {
 
   return (
     <>
-      {/* <div className="header">Recipe Food Forum</div> */}
 
       {!showForm ? (
         <div className="login-page">
