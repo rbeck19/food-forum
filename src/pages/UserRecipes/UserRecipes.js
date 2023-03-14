@@ -41,8 +41,8 @@ export default function UserRecipes({ userId }) {
             }
         });
         if (userRecipes.length !== 0) {
-            recipesList = userRecipes.map((recipe) => (
-                <div>
+            recipesList = userRecipes.map((recipe, index) => (
+                <div key={index}>
                     <div key={recipe.id} className="recipe-card" onClick={() => handleRecipeRoute(recipe)}>{recipe.title}</div>
                     <div className="card-buttons-container">
                         <button className="update-button" onClick={() => handleEditRoute(recipe)}>Edit</button>

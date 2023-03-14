@@ -47,9 +47,5 @@ export async function logIn(credentials) {
     localStorage.setItem("token", token.user.token)
     localStorage.setItem("userName", token.user.email)
     localStorage.setItem("userId", token.user.id)
-    console.log(token)
-    console.log(token.user)
-    console.log(token.user.token)
-    console.log(token.user.email)
     return getUser()
 }

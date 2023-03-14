@@ -4,7 +4,6 @@ import "./Comment.css"
 export default function Comment({ comment, userId, userName, handleDelete }) {
  
     const commentId = comment.id
-    console.log(comment.owner)
     const user = comment.owner.split("@")
 
     return (
