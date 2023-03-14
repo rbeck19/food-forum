@@ -29,7 +29,7 @@ export default function CreatePage({ userId }) {
     console.log(files[0])
     const formData = new FormData()
     formData.append("file", files[0])
-    formData.append("upload_preset", "mw5q7bli")
+    formData.append("upload_preset", process.env.REACT_APP_PASSWORD)
 
     Axios.post("https://api.cloudinary.com/v1_1/dhjlwaryv/image/upload", formData) 
     .then((res) => setImage(res.data.url)) 
