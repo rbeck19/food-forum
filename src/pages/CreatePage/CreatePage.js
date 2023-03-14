@@ -164,12 +164,12 @@ export default function CreatePage({ userId }) {
               </button>
             </div>
 
-            <div className='recipe-title-container'>
+            <div className='recipe-description-container'>
 
             <input type="file" name="image" accept="image/png, image/jpeg" onChange={(event) => {uploadImage(event.target.files)}}/>
 
             </div>
-
+            <Image className="pic" style={{width:180}}cloudName="dhjlwaryv" publicId={image} />  
           </div>
         </div>
         <div className='create-container'>
@@ -177,7 +177,7 @@ export default function CreatePage({ userId }) {
             Submit
           </button></div>
       </form>
-        <Image style={{width:200}}cloudName="dhjlwaryv" publicId={image} />
+        
     </div>
   )
 }
