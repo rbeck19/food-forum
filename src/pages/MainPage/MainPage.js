@@ -16,9 +16,6 @@ export default function MainPage() {
         getRecipes()
     }, [])  //run on 1st render only
 
-    if(recipes){
-        console.log(recipes.recipes)
-    }
 
     const recipeList = recipes ? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
     

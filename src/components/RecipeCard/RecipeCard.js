@@ -1,17 +1,8 @@
-import { useNavigate, Link } from 'react-router-dom'
-//import { useEffect, useState } from "react"
-// import '../../index.css'
+import {  Link } from 'react-router-dom'
+
 
 export default function RecipeCard({ recipe }) {
-    // const navigate = useNavigate()
 
-    function handleClick(){
-        // navigate('/recipe_details')
-        //console.log('clicked')
-    }
-
-    // useEffect(() => {
-    // })
 
     return (
             <div key={recipe.id}>

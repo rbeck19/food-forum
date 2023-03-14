@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import * as recipeAPI from "../../utilities/recipes-api";
-import { useNavigate, Link } from "react-router-dom";
-import { getUserInfo } from "../../utilities/users-service";
-import RecipeCard from "../../components/RecipeCard/RecipeCard";
+import { useNavigate} from "react-router-dom";
+
 
 
 export default function UserRecipes({ userId }) {
@@ -14,13 +13,9 @@ export default function UserRecipes({ userId }) {
 
     //Delete on button click
     async function handleDelete(recipeId) {
-        console.log("hi");
-        console.log(recipeId);
         setRender(false)
         //Remove from DB
         await recipeAPI.remove(recipeId);
-
-        console.log(recipes);
     }
 
     function handleEditRoute(recipe){
@@ -45,13 +40,10 @@ export default function UserRecipes({ userId }) {
                 userRecipes.push(recipe);
             }
         });
-        console.log(userRecipes);
         if (userRecipes.length !== 0) {
             recipesList = userRecipes.map((recipe) => (
                 <div>
-                    {/* <Link to='/update' state={{ from: recipe }}> */}
                     <div key={recipe.id} className="recipe-card" onClick={() => handleRecipeRoute(recipe)}>{recipe.title}</div>
-                     {/* </Link> */}
                     <div className="card-buttons-container">
                         <button className="update-button" onClick={() => handleEditRoute(recipe)}>Edit</button>
                         <button className="delete-button" onClick={() => handleDelete(recipe.id)}>Delete</button>
@@ -63,7 +55,6 @@ export default function UserRecipes({ userId }) {
 
     function handleClick() {
         navigate("/recipe_create")
-        //console.log('clicked')
     }
 
     return (
