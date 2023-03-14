@@ -14,7 +14,6 @@ export default class SignUpForm extends Component {
 
     handleChange = (event) => {
         this.setState({
-            //name,email,password,conform : value
             [event.target.name]: event.target.value,
             error: ""
         })
@@ -24,7 +23,6 @@ export default class SignUpForm extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault()
-        // alert(JSON.stringify(this.state))
 
         //try something, if it works great
         try {
@@ -32,14 +30,9 @@ export default class SignUpForm extends Component {
             //delete the error and confirm so that it doesnt get sent to back end
             const formData = { ...this.state }
             delete formData.error
-            //delete formData.password_confirmation
-            //logs user name, email, password
-            console.log(formData)
 
             //wait for a response back from the server
             const user = await signUp(formData)
-            //logs the all user info
-            console.log(user)
             //get user when signed up
             this.props.setUser(user)
 

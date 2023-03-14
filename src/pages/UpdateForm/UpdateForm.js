@@ -8,8 +8,6 @@ export default function UpdateForm({ userId }) {
 
   const recipeInfo = useLocation()
   const { from } = recipeInfo.state
-  console.log(from.id)
-  console.log(from)
 
   const navigate = useNavigate()
 
@@ -18,11 +16,6 @@ export default function UpdateForm({ userId }) {
   const [formValues, setFormValues] = useState(from.ingredients);
   const [formStepsValues, setFormStepsValues] = useState(from.steps);
 
-
-  // console.log(title)
-  // console.log(description)
-  console.log(formValues)
-  // console.log(formStepsValues)
 
 
   //--------
@@ -37,9 +30,6 @@ export default function UpdateForm({ userId }) {
   // ---------Ingredients
   const handleChange = (e, index) => {
     const values = [...formValues];
-    console.log(values)
-    console.log(index)
-    console.log(values[index])
     values[index] = e.target.value;
     setFormValues(values);
   };
@@ -87,31 +77,13 @@ export default function UpdateForm({ userId }) {
     try {
       event.preventDefault()
 
-      console.log(title)
-      console.log(description)
-      console.log("???????  " + formValues)
-      console.log(
-        formValues.map((val) => {
-          return val.value;
-        })
-      );
-
-      console.log(
-        formStepsValues.map((val) => {
-          return val.value;
-        })
-      );
 
       const ingredients = formValues
       const steps = formStepsValues
 
-      console.log(ingredients)
-      console.log(steps)
 
       const recipeData = { title, description, ingredients, steps, owner: userId }
 
-      console.log(recipeData)
-      console.log(userId)
       await recipeAPI.update(from.id, recipeData)
       navigate('/user_recipes')
       return recipeData

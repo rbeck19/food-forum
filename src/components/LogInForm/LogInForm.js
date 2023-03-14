@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { logIn } from "../../utilities/users-service"
-//import * as userAPI from "../../utilities/users-service"
-//import SignUpForm from "../SignUpForm/SignUpForm"
 import '../../index.css';
 
 
@@ -27,7 +25,6 @@ export default function LogInForm({ setUser, showForm, setShowForm }) {
             event.preventDefault()
             const userToLogin = await logIn(credentials)
             setUser(userToLogin)
-            console.log(userToLogin)
         } catch {
             setError("Invalid Login Credentials")
         }
