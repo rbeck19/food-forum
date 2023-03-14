@@ -20,7 +20,6 @@ export default function NavBar({ user, setUser, userName, setUserName }) {
                     <Link className="link" to="/user_recipes">Your Recipes</Link>
                 </span>
                 <span className="nav-right">
-                    {/* <Link to="/recipe_details">Recipe Details Page</Link> */}
 
                     <span>Logged in as {userName}</span>
                     &nbsp; | &nbsp;

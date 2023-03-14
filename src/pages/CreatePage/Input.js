@@ -11,7 +11,6 @@ export default function Input({ objValue, onChange, index, deleteField, formValu
       if (form !== undefined) {
         let button;
         if (form.length > 1) {
-          console.log(form.length)
           button = toggleDeleteButton()
         }
         else if (form.length == 1) {
