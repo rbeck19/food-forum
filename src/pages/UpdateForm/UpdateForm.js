@@ -8,6 +8,10 @@ export default function UpdateForm({ userId }) {
 
   const recipeInfo = useLocation()
   const { from } = recipeInfo.state
+  const placeholderIngredient = 'Add an Ingredient'
+  const placeholderStep = 'Add a Step'
+  console.log(from.id)
+  console.log(from)
 
   const navigate = useNavigate()
 
@@ -129,6 +133,7 @@ export default function UpdateForm({ userId }) {
                   onChange={handleChange}
                   index={index}
                   deleteField={handleDeleteField}
+                  placeholder = {placeholderIngredient}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleAddField}>
@@ -146,6 +151,7 @@ export default function UpdateForm({ userId }) {
                   onChange={handleStepChange}
                   index={index}
                   deleteField={handleStepDeleteField}
+                  placeholder = {placeholderStep}
                 />
               ))}
                 <button className='create-page-buttons' onClick={handleStepAddField}>
