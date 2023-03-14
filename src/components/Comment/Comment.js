@@ -13,7 +13,7 @@ export default function Comment({ comment, userId, userName, handleDelete }) {
             <div className="comment-body-container">
                 <div className="comment-text-area"><p>&nbsp;&nbsp;{comment.note}</p></div>
                 <div className="comment-by-area">
-                    <h4>By:&nbsp;{user[0]}&nbsp;</h4>
+                    <p>By:&nbsp; {user[0]}&nbsp;</p>
                     {userName == comment.owner ? <button className='delete-comment button' onClick={() => handleDelete(commentId)}>Delete</button> : null}
                 </div>
             </div>  

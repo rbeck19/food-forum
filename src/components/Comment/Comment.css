@@ -24,7 +24,7 @@
 .delete-comment {
     margin: 0 auto;
     margin-top: 0px;
-    width: 120px;
+    width: 80%;
     background-color: rgb(100, 100, 165);
     color: white;
     padding: 6px;
@@ -45,7 +45,10 @@
 }
 
 .comment-by-area {
-    width: 8vw;
+    width: 12vw;
+    min-width: 100px;
+    height: 13vh;
     text-align: center;
     vertical-align: middle;
 }
+
