@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Input({ objValue, onChange, index, deleteField }) {
+export default function Input({ objValue, onChange, index, deleteField, placeholder }) {
   const { label, type, value } = objValue
     
     const handleValue = (value) => {
@@ -17,6 +17,7 @@ export default function Input({ objValue, onChange, index, deleteField }) {
         <input id='recipe-ingredients-input' className='create-inputs'
           type={"text"}
           value={handleValue(objValue)}
+          placeholder={placeholder}
           onChange={(e) => onChange(e, index)}
         />
         </div>
