@@ -1,5 +1,3 @@
-import * as commentAPI from "../../utilities/comment-api";
-
 export default function Comment({ comment, userId, userName, handleDelete }) {
 
     const commentId = comment.id

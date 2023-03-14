@@ -11,6 +11,8 @@ export default function CreatePage({ userId }) {
   const [description, setDescription] = useState('')
   const [formValues, setFormValues] = useState([{ type: 'text', value: '' }]);
   const [formStepsValues, setFormStepsValues] = useState([{ type: 'text', value: '' }]);
+  const placeholderIngredient = 'Add an Ingredient'
+  const placeholderStep = 'Add a Step'
 
   const navigate = useNavigate()
   //--------
@@ -140,6 +142,7 @@ export default function CreatePage({ userId }) {
                   index={index}
                   deleteField={handleDeleteField}
                   formValues={formValues}
+                  placeholder = {placeholderIngredient}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleAddField}>
@@ -159,6 +162,7 @@ export default function CreatePage({ userId }) {
                   index={index}
                   deleteField={handleStepDeleteField}
                   formStepsValues={formStepsValues}
+                  placeholder = {placeholderStep}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleStepAddField}>
