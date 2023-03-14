@@ -10,8 +10,6 @@ export default function UpdateForm({ userId }) {
   const { from } = recipeInfo.state
   const placeholderIngredient = 'Add an Ingredient'
   const placeholderStep = 'Add a Step'
-  console.log(from.id)
-  console.log(from)
 
   const navigate = useNavigate()
 
