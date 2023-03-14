@@ -1,5 +1,7 @@
+import "./RecipeDetailingredient.css"
+
 export default function RecipeDetailIngredient({ ingredient }) {
     return (
-        <h3>{ingredient}</h3>
+        <li className="ingredient-item">{ingredient}</li>
     )
 }

@@ -5,6 +5,7 @@ import * as commentAPI from "../../utilities/comment-api";
 import RecipeDetailIngredient from "../../components/RecipeDetailIngredient/RecipeDetailIngredient";
 import RecipeDetailStep from "../../components/RecipeDetailStep/RecipeDetailStep";
 import Comment from "../../components/Comment/Comment";
+import "./RecipeDetailPage.css"
 
 export default function RecipeDetailPage({userId, userName}) {
   const [recipes, setRecipes] = useState("");
@@ -63,7 +64,7 @@ export default function RecipeDetailPage({userId, userName}) {
 
   const recipeStep = recipes
     ? recipes.steps.map((step, index) => (
-        <RecipeDetailStep step={step} key={index} />
+        <RecipeDetailStep step={step} index={index} key={index} />
       ))
     : "";
 
@@ -94,23 +95,49 @@ export default function RecipeDetailPage({userId, userName}) {
     <>
       <h2>Recipe Detail Page</h2>
 
-      <div className="detail-container">
-        <h1>{recipes.title}</h1>
+      <div className="main-container">
+
+        <div className = "main-container-ingredients">
+            <img className="recipe-img"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGNlEfUupad2tsTTG6s7ym57Tq1nchq13SA&usqp=CAU" />
+
+            
+            <div className="recipe-engredient-container">
+            <h2 className="ingredients-header">Ingredients</h2>
+                {recipes && recipeIngredient}
+            </div>
+        </div>
+      
+        <div className = "main-container-steps">
+            <div className="detail-container">
+                <h1>{recipes.title}</h1>
+            </div>
+
+            <div className="recipe-steps-container">
+                {recipes && recipeStep}
+            </div>
+        </div>
+
+        
       </div>
 
-      {recipes && recipeIngredient}
-      {recipes && recipeStep}
-   <textarea
-        value={note}
-        placeholder="Enter Comment Here"
-        onChange={handleChange}
-        className="new-comment-input"
-      >
-      </textarea>
-      <button className="new-comment-submit button" onClick={handleSubmit}>
-        Submit
-      </button>
-      {comment && comments}
+      
+
+      <div className = "create-comment-container">
+        <textarea
+            value={note}
+            placeholder="Enter Comment Here"
+            onChange={handleChange}
+            className="new-comment-input"
+        >
+        </textarea>
+        <button className="new-comment-submit button" onClick={handleSubmit}>
+            Submit
+        </button>
+      </div>
+
+      <div className="recipe-comments-container">
+        {comment && comments}
+      </div>
 
    
     </>

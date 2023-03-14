@@ -1,0 +1,112 @@
+.recipe-img {
+    height: 30vh;
+    max-width: 30vw;
+    background-color: azure;
+    
+}
+
+
+.main-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 5vh;
+}
+
+
+.main-container-ingredients {
+    width: 45%;
+}
+
+
+.main-container-steps {
+    width: 45%;
+}
+
+.detail-container {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    background-color: whitesmoke;
+    margin: 30px 30px 10px 0;
+    /* background-color: white; */
+    padding: 15px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+    margin: 10px auto;
+}
+
+
+.new-comment-input {
+    width: 40vw;
+    height: 15vh;
+}
+
+.create-comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.comment-container {
+    display: flex;
+    align-items: center;
+}
+
+.new-comment-submit {
+    width: 120px;
+    margin-left: 2vw;
+    border-radius: 8px;
+    background-color: rgb(70, 70, 140);
+    border: 2px solid whitesmoke;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 6px;
+    margin-left: 20px;
+}
+
+.ingredients-header {
+    background: none;
+    text-align: left;
+    box-shadow: none;
+}
+
+.recipe-engredient-container{
+    background-color: whitesmoke;
+    margin: 30px 30px 10px 0;
+    /* background-color: white; */
+    padding: 15px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+}
+
+.recipe-comments-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.new-comment-input{
+    background-color: whitesmoke;
+}
+
+.recipe-steps-container {
+    /* background-color: whitesmoke;
+    padding: 10px 0; */
+    background-color: whitesmoke;
+    margin: 10px auto;
+    /* background-color: white; */
+    padding: 4px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+}
