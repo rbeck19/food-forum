@@ -1,7 +1,7 @@
 
 import sendRequest from "./users-api";
 
-const BASE_URL = "http://127.0.0.1:8000/api/recipes/"
+const BASE_URL = "https://recipe-forum.onrender.com/api/recipes/"
 
 //GET Recipe
 export function getALL() {

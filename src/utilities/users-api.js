@@ -1,7 +1,7 @@
 //handle API calls here
 import { getToken } from "./users-service"
 
-const BASE_URL = 'http://127.0.0.1:8000/api/'
+const BASE_URL = 'https://recipe-forum.onrender.com/api/'
 
 
 export async function signUp(userData) {
