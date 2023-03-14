@@ -378,8 +378,9 @@ Detail page
 **************************/
 
 .detail-container {
-  border: solid black 2px;
+  /* border: solid black 2px; */
   text-align: center;
+  margin-bottom: 60px;
 }
 
 /**************************
