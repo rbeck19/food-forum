@@ -398,6 +398,11 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.pic {
+  margin-top: 2%;
+}
+
 /**************************
 USER RECIPES
 **************************/
