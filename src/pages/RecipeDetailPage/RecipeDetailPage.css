@@ -1,26 +1,29 @@
-.recipe-img {
-    height: 30vh;
-    max-width: 30vw;
-    background-color: azure;
-    
-}
 
 
 .main-container {
-    width: 80%;
     display: flex;
-    justify-content: space-between; 
-    margin-bottom: 5vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0px;
 }
-
-
+.recipe-image{
+    margin: 10px;
+    height: 200px;
+    width: max-content;
+}
 .main-container-ingredients {
-    width: 45%;
+    display: grid;
+    justify-items: center;
+    align-self: flex-start;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 
 .main-container-steps {
-    width: 45%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .detail-container {
@@ -39,35 +42,37 @@
     border-radius: 12px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
     margin: 10px auto;
+    
 }
-
-
 .new-comment-input {
-    width: 40vw;
-    height: 15vh;
+    background-color: aqua;
 }
 
 .create-comment-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-bottom: 30px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    max-width: auto;
+    margin-bottom: 20px;
+    padding-right: 20px;
 }
 
 .comment-container {
-    display: flex;
-    align-items: center;
+    width: 500px;
 }
 
 .new-comment-submit {
-    width: 120px;
-    margin-left: 2vw;
+    display: grid;
+    justify-self: end;
+    width: 100px;
     border-radius: 8px;
-    background-color: rgb(70, 70, 140);
+    background-color: rgb(65, 65, 130);
     border: 2px solid whitesmoke;
     color: white;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
+    margin: 4px 0;
     padding: 6px;
     margin-left: 20px;
 }
@@ -76,18 +81,27 @@
     background: none;
     text-align: left;
     box-shadow: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: rgb(65, 65, 130);
+    color: white;
 }
 
-.recipe-engredient-container{
+.recipe-engredient-container {
+    display: grid;
+    justify-self: center;
+    margin: 20px;
     background-color: whitesmoke;
-    margin: 30px 30px 10px 0;
-    /* background-color: white; */
-    padding: 15px;
-    width: 90%;
-    border-radius: 12px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+    min-width: 400px;
+    max-width: 400px;
+    
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
 }
-
+.recipe-desc{
+    font-size: 18px;
+    margin: 0 10px 10px 10px;
+}
 .recipe-comments-container {
     display: flex;
     flex-direction: column;
@@ -95,18 +109,51 @@
     margin-bottom: 40px;
 }
 
-.new-comment-input{
+.new-comment-input {
     background-color: whitesmoke;
 }
 
 .recipe-steps-container {
-    /* background-color: whitesmoke;
-    padding: 10px 0; */
+    background-color: whitesmoke;
+    margin: 20px;
+    width: 400px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6x rgba(0, 0, 0, 0.65);
+}
+
+.recipe-detail-step-container {
     background-color: whitesmoke;
     margin: 10px auto;
     /* background-color: white; */
     padding: 4px;
     width: 90%;
     border-radius: 12px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85);
+    /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.85); */
+}
+
+/* .recipe-detail-step-container h3 {
+    margin: 0;
+
+} */
+
+.step-header {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.step-body {
+    margin: 5px 0;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.ingredient-item {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin: 0 10px 5px 10px;
 }

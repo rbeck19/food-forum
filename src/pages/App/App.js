@@ -27,7 +27,7 @@ export default function App() {
     <main className="App">
       {
         user ?
-          <>
+        <>
             <NavBar user={user} setUser={setUser} userName={userName}
               setUserName={setUserName} />
             <Routes >
@@ -37,8 +37,8 @@ export default function App() {
               <Route path="/recipe_details" element={<RecipeDetailPage userId={userId}  userName={userName}/>} />
               <Route path="/recipe_create" element={<CreatePage userId={userId}/>} />
               <Route path="/update" element={<UpdateForm userId={userId}/>} />
-              <Route path="/footer" element={<Footer/>} />
             </Routes>
+            <Footer />
           </>
           :
           <AuthPage setUser={setUser} />

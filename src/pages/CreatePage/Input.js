@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect} from 'react'
 import '../../index.css'
 
-export default function Input({ objValue, onChange, index, deleteField, formValues, formStepsValues, placeholder }) {
+export default function Input({ objValue, onChange, index, deleteField, formValues, formStepsValues, placeholder, desc }) {
   const { label, type, value } = objValue;
   const [toggle, setToggle] = useState()
 
@@ -30,15 +30,30 @@ export default function Input({ objValue, onChange, index, deleteField, formValu
   function untoggleDeleteButton() {
     return <div></div>
   }
+  //console.log(desc)
+  function toggleInputField() {
+    if(desc === 'ingredient'){
+      return <input id='recipe-ingredients-input' className='create-inputs'
+      type={"text"}
+      value={value || ""}
+      placeholder={placeholder}
+      onChange={(e) => onChange(e, index)}
+      
+    />
+    } 
+    else if(desc === 'step'){
+      return <textarea id='description-input'
+      type={"text"}
+      value={value || ""}
+      placeholder={placeholder}
+      onChange={(e) => onChange(e, index)}
+    />
+    }
+  }
   return (
     <div className="input-group">
       <div>
-        <input id='recipe-ingredients-input' className='create-inputs'
-          type={"text"}
-          value={value || ""}
-          placeholder={placeholder}
-          onChange={(e) => onChange(e, index)}
-        />
+        {toggleInputField()}
       </div>
       {toggle}
     </div>

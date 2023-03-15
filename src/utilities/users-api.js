@@ -2,7 +2,7 @@
 import { getToken } from "./users-service"
 
 const BASE_URL = 'https://recipe-forum.onrender.com/api/'
-
+// const BASE_URL = 'http://localhost:8000/api/'
 
 export async function signUp(userData) {
 
@@ -31,9 +31,13 @@ export default async function sendRequest(url, method="GET", payload=null) {
         //best practice is to begin with "Bearer "
     }
     const res = await fetch(url, options)
-    if(res.ok) {
+    if(method === "DELETE"){
+        return
+    }
+    else if(res.ok) {
         return res.json()
-    } else {
+    } 
+    else {
         throw new Error("Bad Request")
     }
 }

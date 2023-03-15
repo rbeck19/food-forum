@@ -1,7 +1,3 @@
-.comment-container{
-    display: flex;
-    border-radius: 4px;
-}
 
 .comment-body-container {
     display: flex;
@@ -15,12 +11,6 @@
    
 
 }
-/* .comment-body-container h3{
-    margin: 5px auto;
-    width: 400px;
-
-} */
-
 .delete-comment {
     margin: 0 auto;
     margin-top: 0px;
@@ -36,18 +26,17 @@
 }
 
 .comment-text-area {
-    width: 50vw;
+    /* width: 50vw; */
     padding: 5px 5px;
     background-color: rgb(223, 217, 217);
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-
 }
 
 .comment-by-area {
-    width: 12vw;
+    /* width: 12vw; */
     min-width: 100px;
-    height: 13vh;
+    /* height: 13vh; */
     text-align: center;
     vertical-align: middle;
 }

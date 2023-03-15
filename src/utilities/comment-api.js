@@ -1,6 +1,7 @@
 import sendRequest from "./users-api";
 
 const BASE_URL = "https://recipe-forum.onrender.com/api/comment/"
+// const BASE_URL = "http://localhost:8000/api/comment/"
 
 //GET comment
 export function getComments() {

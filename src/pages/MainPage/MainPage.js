@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import * as recipeAPI from "../../utilities/recipes-api"
 import RecipeCard from "../../components/RecipeCard/RecipeCard"
+import Footer from "../../components/Footer/Footer"
 import '../../index.css';
 
 export default function MainPage() {
@@ -8,7 +9,7 @@ export default function MainPage() {
     //let recipesList
     //get request to server to receive all recipe data
 
-    useEffect(function() {
+    useEffect(function () {
         async function getRecipes() {
             const recipes = await recipeAPI.getALL()
             setRecipes(recipes)
@@ -18,13 +19,16 @@ export default function MainPage() {
 
 
     const recipeList = recipes ? recipes.recipes.map((recipe, index) => <RecipeCard recipe={recipe} key={index} />) : ""
-    
-    return(
+
+    return (
         <div className="main-page">
-            <h2>Welcome to the Recipe Forum!</h2>
-            <div className="recipes-container">  
+            <div className="head-container">
+                <div className="page-header">Welcome to the Recipe Forum!</div>
+            </div>
+            <div className="recipes-container">
                 {recipes && recipeList}
             </div>
+
         </div>
     )
 }

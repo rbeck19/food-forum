@@ -1,12 +1,23 @@
-import {  Link } from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeCard({ recipe }) {
+    const navigate = useNavigate();
 
+    function handleRecipeRoute() {
+        navigate("/recipe_details", { state: { from: recipe } })
+    }
 
     return (
-            <div key={recipe.id}>
-                <Link to='/recipe_details' state={{ from: recipe}} className="recipe-card" >{recipe.title}<p className='recipe-description'>{recipe.description}</p></Link>
+        <div className="recipe-card-container">
+            <div key={recipe.id} className="recipe-card"
+                style={{
+                    backgroundImage: `url(${recipe.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+                onClick={() => handleRecipeRoute(recipe)} >
             </div>
+            <div className="recipe-card-title">{recipe.title}</div>
+        </div>
     )
 }

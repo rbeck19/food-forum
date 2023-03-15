@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as recipeAPI from "../../utilities/recipes-api"
 import { useNavigate } from "react-router-dom"
 import Axios from "axios"
-import {Image} from "cloudinary-react"
+import { Image } from "cloudinary-react"
 import Input from "./Input"
 
 export default function CreatePage({ userId }) {
@@ -14,7 +14,8 @@ export default function CreatePage({ userId }) {
   const [image, setImage] = useState(null)
   const placeholderIngredient = 'Add an Ingredient'
   const placeholderStep = 'Add a Step'
-
+  const step = 'step';
+  const ingredient = 'ingredient';
   const navigate = useNavigate()
   //--------
   const handleTitleChange = (event) => {
@@ -26,13 +27,13 @@ export default function CreatePage({ userId }) {
   //---------
 
   const uploadImage = (files) => {
-    console.log(files[0])
+    
     const formData = new FormData()
     formData.append("file", files[0])
     formData.append("upload_preset", process.env.REACT_APP_PASSWORD)
 
-    Axios.post("https://api.cloudinary.com/v1_1/dhjlwaryv/image/upload", formData) 
-    .then((res) => setImage(res.data.url)) 
+    Axios.post("https://api.cloudinary.com/v1_1/dhjlwaryv/image/upload", formData)
+      .then((res) => setImage(res.data.url))
   }
 
 
@@ -103,7 +104,9 @@ export default function CreatePage({ userId }) {
   return (
     <div className='create-container'>
       <form className='create-recipe-form' onSubmit={handleSubmit}>
-        <h2 className='new-recipe-title'>Create New Recipe</h2>
+        <div className="head-container">
+          <div className='page-header'>Add a Recipe!</div>
+        </div>
         <div className='create-flexbox'>
           <div className='create-left-grid'>
             <div className='recipe-title-container'>
@@ -136,7 +139,8 @@ export default function CreatePage({ userId }) {
                   index={index}
                   deleteField={handleDeleteField}
                   formValues={formValues}
-                  placeholder = {placeholderIngredient}
+                  placeholder={placeholderIngredient}
+                  desc={ingredient}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleAddField}>
@@ -145,7 +149,13 @@ export default function CreatePage({ userId }) {
             </div>
 
           </div>
+
           <div className='create-right-grid'>
+            <div className='recipe-upload-container'>
+            <label className='create-page-labels'>Recipe Image</label>
+              <input className='file-upload' type="file" name="image" accept="image/png, image/jpeg" onChange={(event) => { uploadImage(event.target.files) }} />
+              <Image className='image-display' style={{ width: 200 }} cloudName="dhjlwaryv" publicId={image} />
+            </div>
             <div id='steps-container'>
               <label className='create-page-labels'>Steps</label>
               {formStepsValues.map((obj, index) => (
@@ -156,7 +166,8 @@ export default function CreatePage({ userId }) {
                   index={index}
                   deleteField={handleStepDeleteField}
                   formStepsValues={formStepsValues}
-                  placeholder = {placeholderStep}
+                  placeholder={placeholderStep}
+                  desc={step}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleStepAddField}>
@@ -170,6 +181,7 @@ export default function CreatePage({ userId }) {
 
             </div>
             <Image className="pic" style={{width:180}}cloudName="dhjlwaryv" publicId={image} />  
+
           </div>
         </div>
         <div className='create-container'>
@@ -177,7 +189,6 @@ export default function CreatePage({ userId }) {
             Submit
           </button></div>
       </form>
-        
     </div>
   )
 }
