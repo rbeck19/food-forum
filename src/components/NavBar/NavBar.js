@@ -15,7 +15,7 @@ export default function NavBar({ user, setUser, userName, setUserName }) {
         <nav className="nav-bar">
             <div className="nav-bar-contents">
                 <span className="nav-left">
-                    <Link className="link" to="/main">Home Page</Link>
+                    <Link className="link" to="/main">Home</Link>
                     &nbsp; | &nbsp;
                     <Link className="link" to="/user_recipes">Your Recipes</Link>
                 </span>

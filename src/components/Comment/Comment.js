@@ -16,7 +16,6 @@ export default function Comment({ comment, userId, userName, handleDelete }) {
                     {userName == comment.owner ? <button className='delete-comment button' onClick={() => handleDelete(commentId)}>Delete</button> : null}
                 </div>
             </div>  
-            
         </div>
         </>
     )

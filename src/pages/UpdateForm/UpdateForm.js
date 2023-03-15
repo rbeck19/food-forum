@@ -10,7 +10,8 @@ export default function UpdateForm({ userId }) {
   const { from } = recipeInfo.state
   const placeholderIngredient = 'Add an Ingredient'
   const placeholderStep = 'Add a Step'
-
+  const step = 'step';
+  const ingredient = 'ingredient';
   const navigate = useNavigate()
 
   const [title, setTitle] = useState(from.title)
@@ -99,7 +100,9 @@ export default function UpdateForm({ userId }) {
   return (
     <div className='create-container'>
       <form className='create-recipe-form' onSubmit={handleSubmit}>
-        <h2 className='new-recipe-title'>Update Your Recipe</h2>
+        <div className="head-container">
+          <div className='page-header'>Update Your Recipe</div>
+        </div>
         <div className='create-flexbox'>
           <div className='create-left-grid'>
             <div className='recipe-title-container'>
@@ -113,7 +116,7 @@ export default function UpdateForm({ userId }) {
               ></input>
             </div>
             <div className='recipe-description-container'>
-            <label className='create-page-labels'>Description</label>
+              <label className='create-page-labels'>Description</label>
               <textarea
                 type='text'
                 name='description'
@@ -131,7 +134,8 @@ export default function UpdateForm({ userId }) {
                   onChange={handleChange}
                   index={index}
                   deleteField={handleDeleteField}
-                  placeholder = {placeholderIngredient}
+                  placeholder={placeholderIngredient}
+                  desc={ingredient}
                 />
               ))}
               <button className='create-page-buttons' onClick={handleAddField}>
@@ -149,23 +153,24 @@ export default function UpdateForm({ userId }) {
                   onChange={handleStepChange}
                   index={index}
                   deleteField={handleStepDeleteField}
-                  placeholder = {placeholderStep}
+                  placeholder={placeholderStep}
+                  desc={step}
                 />
               ))}
-                <button className='create-page-buttons' onClick={handleStepAddField}>
-                  Add Step
-                </button>
+              <button className='create-page-buttons' onClick={handleStepAddField}>
+                Add Step
+              </button>
             </div>
-            
+
 
 
           </div>
         </div>
         <div className='create-container'>
-              <button className='create-recipe-button' type="submit">
-                Update
-              </button>
-            </div>
+          <button className='create-recipe-button' type="submit">
+            Update
+          </button>
+        </div>
       </form>
     </div >
   )
