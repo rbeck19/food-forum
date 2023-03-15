@@ -174,14 +174,6 @@ export default function CreatePage({ userId }) {
                 Add Step
               </button>
             </div>
-
-            <div className='recipe-description-container'>
-
-            <input type="file" name="image" accept="image/png, image/jpeg" onChange={(event) => {uploadImage(event.target.files)}}/>
-
-            </div>
-            <Image className="pic" style={{width:180}}cloudName="dhjlwaryv" publicId={image} />  
-
           </div>
         </div>
         <div className='create-container'>
@@ -189,6 +181,7 @@ export default function CreatePage({ userId }) {
             Submit
           </button></div>
       </form>
+      
     </div>
   )
 }
