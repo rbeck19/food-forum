@@ -1,30 +1,16 @@
 # Recipe-Forum
 
 ## Description
-- A Recipe-Forum app that is a place meant to give food lovers a place to come together and share their favorite recipes and comment on recipes. plus testing
+A Recipe-Forum app that is a place meant to give food lovers a place to come together and share their favorite recipes and comment on recipes. Check out our app [HERE](https://recipe-forum-client.onrender.com/main)
 
-## Wireframe
-![Wireframe](images/recipe_forum_wireframe.jpg)
-
-## ERD
-![ERD](images/Food-Forum%20%20(2).png)
+## Screen Shots
+![Log in Page](images/Snapshot_recipe5.jpg)
+![Home Page](images/Snapshot_recipe1.jpg)
+![Detail Page](images/Snapshot_recipe2.jpg)
+![My Recipes](images/Snapshot_recipe3.jpg)
+![Create Page](images/Snapshot_recipe4.jpg)
 
 ## [Trello-Board](https://trello.com/b/Xl8J8a75/food-forum-app)
-
-## MVP
-- As a user, I want to view all recipes
-- As a user, I want to view a single recipe
-- As a user, I want to create a recipe with a name and description
-- As a user, I want to be able to edit my recipes name and description
-- As a user, I want to delete my recipe
-- As a user, I want to be able to add steps to my recipe
-- As a user, I want to be able to add ingredients to my recipe
-- As a user, I want to be able to sign-in
-- As a user, I want to be able to sign-up
-- As a user, I want to be able to sign-out
-- As a user, I want to be able to create a comment 
-- As a user, I want to be able to delete my comment
-
 
 
 ## Version 2
@@ -32,7 +18,9 @@
 - As a user, I want to be able to dislike a recipe 
 
 ## Version 3
-- Add Images to the Recipe
+- As a user, I want to add user avatars 
+- As a user, I want to be able to comment with Emojis
+- As a user, I want to be able to search recipes
 
 
 ## Technologies Used
@@ -45,3 +33,5 @@
 7. Django-auth
 8. Node
 9. REACT
+10. Python
+11. Cloudinary
